@@ -1,19 +1,19 @@
-# [Project Name]
+# The Morning Paper
 
-Created by [team member], [team member], and [team member].
+Created by Mario and Azim.
 
 ## 🚀 Mission statement
 
-Our application, [app name] is for [target audience]. It allows users to [what it does and why audience would use it]
+Our application, The Morning Paper is for anyone. It allows users to browse through morning news, check the weather in their city or any other city in the world, and play a mini game.
 
 ## API & React Router
 
 This application will use the [name of API] API. Below are the documentation and specific endpoints we intend to use and the front-end pages that will use them.
 
 - Link to API documentation: [Link goes here]
-- API endpoint #1
-  - Description of endpoint
-  - List of data values used by the endpoint
+-   "https://weather.algobook.info/forecast/london"
+  - This will fetch two objects in the array, city object with the city information, and forcast with the 10 day forecast. 
+  - For each city, I want the city `name`, `formattedDay`, `minTempFarenheit`, `maxTempFarenheit`, and `forecastText`
 - API endpoint #2
   - Description of endpoint
   - List of data values used by the endpoint
