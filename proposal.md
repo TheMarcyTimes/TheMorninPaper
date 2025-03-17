@@ -99,4 +99,8 @@ Below, you can find wireframes for our project. Each wireframe shows a different
 
 [Wireframe for page 1]
 
+<img width="826" alt="Screenshot 2025-03-17 at 11 25 05 AM" src="https://github.com/user-attachments/assets/b04843b0-229e-476c-88e5-70b218b62fba" />
+
+
+
 [Wireframe for page 2]
