@@ -66,30 +66,32 @@ If time permits, the following stretch features will be implemented in order of 
 
 To ensure that we can complete all core features of the application in 1 week, we will aim to complete tasks according to the following timeline:
 
+ROUGH TIMELINE BOUND TO BE CHANGED
+
 **Day 1**
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
+- [ ] 
+- [ ] Implimenting Fetches
+- [ ] begin creating the framework / baseline
 
 **Day 2**
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
+- [ ] 
+- [ ] 
+- [ ] Creating the style of the site
 
 **Day 3** (MVP due by the end of the day)
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
+- [ ] 
+- [ ] 
+- [ ] Finishing 2/3 of the base functions 
 
 **Day 4**
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
+- [ ] 
+- [ ] 
+- [ ] Finishing all base functions (should be done by today not to be done by)
 
 **Day 5**
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
-- [ ] Ticket description and due date
+- [ ] 
+- [ ] Seeing if stretch goals can be completed
+- [ ] Finishing touches for style
 
 ## Wireframes of each page in your application
 
