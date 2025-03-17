@@ -8,18 +8,20 @@ Our application, The Morning Paper is for anyone. It allows users to browse thro
 
 ## API & React Router
 
-This application will use the [name of API] API. Below are the documentation and specific endpoints we intend to use and the front-end pages that will use them.
+This application will use the  API. Below are the documentation and specific endpoints we intend to use and the front-end pages that will use them.
 
-- Link to API documentation: [Link goes here]
--   "https://weather.algobook.info/forecast/london"
+- Link to API documentation:
+-   https://weather.algobook.info/forecast
   - This will fetch two objects in the array, city object with the city information, and forcast with the 10 day forecast. 
   - For each city, I want the city `name`, `formattedDay`, `minTempFarenheit`, `maxTempFarenheit`, and `forecastText`
-- API endpoint #2
-  - Description of endpoint
-  - List of data values used by the endpoint
-- API endpoint #3
-  - Description of endpoint
-  - List of data values used by the endpoint
+
+- https://saurav.tech/NewsAPI/
+  - This will fetch three objects in the api the title of the news article, its URL, and the catagories the article fits into
+  - Each catagory will be kept to specify the articles they are `business`, `entertainment`, `general`, `health`, `science`, `sports`, `technology`
+    
+- https://random-word-api.herokuapp.com/home
+  - This will fetch one object witch is a random word generator 
+  - Each word fetched would have to follow the `length` we wish from it
 
 [If your API requires an API key, say so here.]
 
@@ -38,9 +40,9 @@ This application will use the [name of API] API. Below are the documentation and
 
 The application will feature the following frontend routes and core features:
 
-* On the `/example` page, users can...
-* On the `/example` page, users can...
-* On the `/example` page, users can...
+* On the `/home` page, users can open a news article URL wich will send them to that article's source
+* On the `/home` page, users can check the weather of a specific location they wish
+* On the `/wordle` page, users can play a mini game
 
 **Example:**
 - On the `/artworks` page, users can view a grid of all artwork
@@ -52,9 +54,9 @@ The application will feature the following frontend routes and core features:
 
 If time permits, the following stretch features will be implemented in order of priority:
 
-* Users will be able to...
-* Users will be able to...
-* Users will be able to...
+* Users will be able to sort each news article via catagory
+* Users will be able to save the cities to have quick access to them on the weather portion
+* Users will be able to change the difficulty of the mini game
 
 **Example:**
 * Users will be able to save and view favorited artworks using local storage
