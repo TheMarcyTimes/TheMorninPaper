@@ -69,23 +69,23 @@ To ensure that we can complete all core features of the application in 1 week, w
 ROUGH TIMELINE BOUND TO BE CHANGED
 
 **Day 1**
-- [ ] 
-- [ ] Implimenting Fetches
-- [ ] begin creating the framework / baseline
+- [ ] Create file structures/components
+- [ ] Impliment Fetches
+- [ ] Begin creating the framework / baseline
 
 **Day 2**
-- [ ] 
+- [ ] Render fetches on the mian page
 - [ ] at least 1 / 3 base functions be complete (`news`, `weather`, `mini game`)
 - [ ] Creating the style of the site
 
 **Day 3** (MVP due by the end of the day)
+- [ ] Finish all the base functionality
 - [ ] 
 - [ ] 
-- [ ] Finishing all of the base functions 
 
 **Day 4**
-- [ ] 
-- [ ] 
+- [ ] Sart styling main page
+- [ ] Apply styles to weather app and wordle
 - [ ] 
 
 **Day 5**
