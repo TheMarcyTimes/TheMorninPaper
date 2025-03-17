@@ -75,18 +75,18 @@ ROUGH TIMELINE BOUND TO BE CHANGED
 
 **Day 2**
 - [ ] 
-- [ ] 
+- [ ] at least 1 / 3 base functions be complete (`news`, `weather`, `mini game`)
 - [ ] Creating the style of the site
 
 **Day 3** (MVP due by the end of the day)
 - [ ] 
 - [ ] 
-- [ ] Finishing 2/3 of the base functions 
+- [ ] Finishing all of the base functions 
 
 **Day 4**
 - [ ] 
 - [ ] 
-- [ ] Finishing all base functions (should be done by today not to be done by)
+- [ ] 
 
 **Day 5**
 - [ ] 
