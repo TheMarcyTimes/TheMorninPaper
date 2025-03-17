@@ -10,8 +10,7 @@ Our application, The Morning Paper is for anyone. It allows users to browse thro
 
 This application will use the  API. Below are the documentation and specific endpoints we intend to use and the front-end pages that will use them.
 - Link to API documentation:
-- 
-- https://weather.algobook.info/forecast
+- https://weather.algobook.info/forecast/London
   - This will fetch two objects in the array, city object with the city information, and forcast with the 10 day forecast. 
   - For each city, I want the city `name`, `formattedDay`, `minTempFarenheit`, `maxTempFarenheit`, and `forecastText`
 
