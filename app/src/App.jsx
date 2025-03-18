@@ -1,11 +1,11 @@
 import React from "react";
-import News from "./components/news.jsx"; // Ensure this path is correct
+import OnThisDay from "./components/news"; // Import the OnThisDay component
 
 function App() {
   return (
     <div>
-      <h1>Latest News</h1>
-      <News />
+      <h1>Historical Events: On This Day</h1>
+      <OnThisDay /> {/* Render the OnThisDay component */}
     </div>
   );
 }
