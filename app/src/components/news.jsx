@@ -63,7 +63,7 @@ const OnThisDay = () => {
   };
 
   return (
-    <div className="on-this-day-container">
+    <>
       <h1>On This Day</h1>
 
       <form onSubmit={handleSubmit}>
@@ -113,7 +113,7 @@ const OnThisDay = () => {
           <p>No historical events found for this date.</p>
         )}
       </div>
-    </div>
+    </>
   );
 };
 
