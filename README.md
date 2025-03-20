@@ -134,53 +134,53 @@ See the [Agile Methodology Reflection document](./agile-methodology-reflection.m
 
 ### Project Fundamentals (7)
 
-- [ ] Used Vite for this project
-- [ ] Used React
-- [ ] Used React Router for client side routing
-- [ ] Made a fetch to get multiple resources
-- [ ] Made a fetch to get a single, specific resource
-- [ ] Made a third fetch for whatever you want
+- [x] Used Vite for this project
+- [x] Used React
+- [x] Used React Router for client side routing
+- [x] Made a fetch to get multiple resources
+- [x] Made a fetch to get a single, specific resource
+- [x] Made a third fetch for whatever you want
 - [ ] Use Context at least once (set up a dark mode)
 - [ ] **Bonus: Were able to get it deployed in a functional state**
 
 ### React Fundamentals (8)
 
-- [ ] Created at least 3 components
-- [ ] Have all components in their own files (1 export per file)
+- [x] Created at least 3 components
+- [x] Have all components in their own files (1 export per file)
 - [ ] Passed props to a component at least 3 times
   - [ ] 1st check box
   - [ ] 2nd check box
   - [ ] 3rd check box
-- [ ] Rendered an array of items to the screen at least once
+- [x] Rendered an array of items to the screen at least once
 - [ ] At no point did you ever use any vanilla DOM JS methods
 
 ### State Management (10)
 
-- [ ] The `useContext` hook is used at least once
-- [ ] Used the `useEffect` hook at least 2 times
-  - [ ] 1st check box
-  - [ ] 2nd check box
-- [ ] Used the `useState` hook at least 3 times
-  - [ ] 1st check box
-  - [ ] 2nd check box
-  - [ ] 3rd check box
+- [x] The `useContext` hook is used at least once
+- [x] Used the `useEffect` hook at least 2 times
+  - [x] 1st check box
+  - [x] 2nd check box
+- [x] Used the `useState` hook at least 3 times
+  - [x] 1st check box
+  - [x] 2nd check box
+  - [x] 3rd check box
 - [ ] Lifted state up out of a component at least once
   - That is a fancy way of saying that you had the state of a component and then passed down the getter and setter functions for the hook to a child component. You've seen us do this!
 - [ ] A Context is created to manage global state
 
 ### React Router (3)
 
-- [ ] Had at least 2 different pages in the application
-- [ ] Used the proper `Link` components to navigate between pages
+- [-] Had at least 2 different pages in the application
+- [-] Used the proper `Link` components to navigate between pages
 - [ ] Used the `useParams` hook at least once
 
 ### Forms & Events (5)
 
-- [ ] Handled at least 2 non-submission events (clicking on something causes a UI change)
-  - [ ] 1st check box
-  - [ ] 2nd check box
-- [ ] Handled form submission event properly with React syntax
-- [ ] Demonstrated a working controlled Form
+- [x] Handled at least 2 non-submission events (clicking on something causes a UI change)
+  - [x] 1st check box
+  - [x] 2nd check box
+- [x] Handled form submission event properly with React syntax
+- [x] Demonstrated a working controlled Form
 
 ### Style (15)
 
@@ -199,9 +199,9 @@ See the [Agile Methodology Reflection document](./agile-methodology-reflection.m
 
 ### A11y (12)
 
-- [ ] There is a `main` element on _each_ page
-- [ ] There is a `nav` element on _each_ page
-- [ ] The `nav` contains a `ul` of links
+- [x] There is a `main` element on _each_ page
+- [x] There is a `nav` element on _each_ page
+- [x] The `nav` contains a `ul` of links
 - [ ] At least one `h1` element on _each_ page
 - [ ] At least one `section` is used properly on _each_ page
 - [ ] Heading tag hierarchy is always correct
@@ -215,7 +215,7 @@ See the [Agile Methodology Reflection document](./agile-methodology-reflection.m
 
 ### README (4)
 
-- [ ] Includes a README.md file
+- [x] Includes a README.md file
 - [ ] The README file describes the purpose and audience for the application
 - [ ] The README file describes the user stories
 - [ ] The README file include screenshots of the final project

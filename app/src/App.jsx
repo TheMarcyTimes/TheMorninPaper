@@ -6,19 +6,13 @@ import "./App.css";
 function App() {
   return (
     <div className="app-container">
-      <h1 className="title">The Marcy Times</h1>
-      <div className="layout-container">
-        <div className="left-section">
-          <div className="news-container">
-            <News />
-          </div>
-          <div className="word-container">
-            <WordGame />
-          </div>
+      <div className="main-content">
+        <h1>The Morning Paper</h1>
+        <div className="news-container">
+          <News />
         </div>
-        <div className="right-section">
-          <Weather />
-        </div>
+        <WordGame />
+        <Weather />
       </div>
     </div>
   );
