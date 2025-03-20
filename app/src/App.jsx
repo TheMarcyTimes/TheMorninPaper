@@ -1,7 +1,7 @@
 import News from "./components/news";
 import WordGame from "./components/word";
 import Weather from "./components/weather";
-import "./App.css"; // Make sure you have a CSS file for styling
+import "./App.css";
 
 function App() {
   return (
