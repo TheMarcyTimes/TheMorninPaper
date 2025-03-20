@@ -1,19 +1,18 @@
-import { useState } from "react";
 import News from "./components/news";
 import WordGame from "./components/word";
 import Weather from "./components/weather";
+import "./App.css"; // Make sure you have a CSS file for styling
 
 function App() {
-  const [showWordGame, setShowWordGame] = useState(false);
-
   return (
-    <div>
-      <Weather />
-      <button onClick={() => setShowWordGame(!showWordGame)}>
-        {showWordGame ? "Show News" : "Play Word Game"}
-      </button>
-
-      {showWordGame ? <WordGame /> : <News />}
+    <div className="app-container">
+      <div className="main-content">
+        <Weather />
+        <WordGame />
+      </div>
+      <div className="news-container">
+        <News />
+      </div>
     </div>
   );
 }

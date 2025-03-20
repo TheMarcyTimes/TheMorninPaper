@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
 import "./word.css";
 
+const MAX_GUESSES = 5;
+
 const WordGame = () => {
   const [difficulty, setDifficulty] = useState("normal");
-  const [targetWord, setTargetWord] = useState(""); // Target word for guessing
-  const [guesses, setGuesses] = useState([]); // List of guesses
-  const [currentGuess, setCurrentGuess] = useState(""); // Current guess input
-  const [message, setMessage] = useState(""); // Message to show user
-  const [gameOver, setGameOver] = useState(false); // Game over flag
+  const [targetWord, setTargetWord] = useState("");
+  const [guesses, setGuesses] = useState([]);
+  const [currentGuess, setCurrentGuess] = useState("");
+  const [message, setMessage] = useState("");
+  const [gameOver, setGameOver] = useState(false);
+  const [gameStarted, setGameStarted] = useState(false);
+  const [guessesLeft, setGuessesLeft] = useState(MAX_GUESSES);
 
   // Function to get a random word based on the difficulty
   const fetchWord = async (length) => {
@@ -16,31 +20,36 @@ const WordGame = () => {
         `https://api.datamuse.com/words?sp=${"?".repeat(length)}`
       );
       const data = await response.json();
-      const randomIndex = Math.floor(Math.random() * data.length);
-      const randomWord = data[randomIndex].word.toLowerCase(); // Pick a random word
-      setTargetWord(randomWord); // Update target word
+      if (data.length > 0) {
+        const randomIndex = Math.floor(Math.random() * data.length);
+        setTargetWord(data[randomIndex].word.toLowerCase());
+      }
     } catch (error) {
       console.error("Error fetching the word:", error);
     }
   };
 
-  // Start a new game by fetching a word based on the difficulty
-  useEffect(() => {
-    switch (difficulty) {
-      case "easy":
-        fetchWord(4); // Easy: 4-letter word
-        break;
-      case "normal":
-        fetchWord(5); // Normal: 5-letter word
-        break;
-      case "hard":
-        fetchWord(7); // Hard: 7-letter word
-        break;
-      default:
-        fetchWord(5); // Default to normal difficulty if no valid difficulty
-        break;
+  // Function to start a new game
+  const startNewGame = () => {
+    setGameStarted(true);
+    setGuesses([]);
+    setCurrentGuess("");
+    setMessage("");
+    setGameOver(false);
+    setGuessesLeft(MAX_GUESSES);
+    const length = difficulty === "easy" ? 4 : difficulty === "normal" ? 5 : 7;
+    fetchWord(length);
+  };
+
+  // Function to handle difficulty change (only before or after a game)
+  const handleDifficultyChange = (e) => {
+    if (!gameStarted || gameOver) {
+      setDifficulty(e.target.value);
+      startNewGame();
+    } else {
+      setMessage("You can only change difficulty before or after a game.");
     }
-  }, [difficulty]);
+  };
 
   // Handle guess submission
   const handleSubmit = (e) => {
@@ -48,6 +57,19 @@ const WordGame = () => {
     if (currentGuess.length === targetWord.length) {
       setGuesses([...guesses, currentGuess]);
       setCurrentGuess("");
+      setGuessesLeft(guessesLeft - 1);
+
+      if (currentGuess === targetWord) {
+        setGameOver(true);
+        setMessage(
+          `🎉 Congratulations! You guessed the word in ${
+            MAX_GUESSES - guessesLeft + 1
+          } tries!`
+        );
+      } else if (guessesLeft - 1 <= 0) {
+        setGameOver(true);
+        setMessage(`❌ Game Over! The word was: ${targetWord}`);
+      }
     } else {
       setMessage(`Guess must be ${targetWord.length} letters!`);
     }
@@ -68,15 +90,6 @@ const WordGame = () => {
     return hints;
   };
 
-  // Function to reset the game
-  const resetGame = () => {
-    setGuesses([]);
-    setCurrentGuess("");
-    setMessage("");
-    setGameOver(false);
-    fetchWord(difficulty === "easy" ? 4 : difficulty === "normal" ? 5 : 7);
-  };
-
   return (
     <div className="word-game">
       <h2>Wordle Game</h2>
@@ -85,41 +98,48 @@ const WordGame = () => {
         <select
           id="difficulty"
           value={difficulty}
-          onChange={(e) => setDifficulty(e.target.value)}
+          onChange={handleDifficultyChange}
+          disabled={gameStarted && !gameOver} // Disable difficulty change mid-game
         >
           <option value="easy">Easy (4 letters)</option>
           <option value="normal">Normal (5 letters)</option>
           <option value="hard">Hard (7 letters)</option>
         </select>
       </div>
-      <div>
-        <h3>Guess the word: </h3>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={currentGuess}
-            onChange={(e) => setCurrentGuess(e.target.value.toLowerCase())}
-            maxLength={targetWord.length}
-            disabled={gameOver}
-          />
-          <button type="submit" disabled={gameOver}>
-            Submit Guess
-          </button>
-        </form>
-      </div>
-      <div>
-        <h3>Previous Guesses:</h3>
-        <ul>
-          {guesses.map((guess, index) => (
-            <li key={index}>
-              {guess} {giveHints(guess).join(" ")}
-            </li>
-          ))}
-        </ul>
-      </div>
-      {message && <p>{message}</p>}
-      {gameOver && <p>Game Over! The word was: {targetWord}</p>}
-      <button onClick={resetGame}>Start New Game</button>
+      {!gameStarted ? (
+        <button onClick={startNewGame}>Start Game</button>
+      ) : (
+        <>
+          <div>
+            <h3>Guess the word: </h3>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                value={currentGuess}
+                onChange={(e) => setCurrentGuess(e.target.value.toLowerCase())}
+                maxLength={targetWord.length}
+                disabled={gameOver}
+              />
+              <button type="submit" disabled={gameOver}>
+                Submit Guess
+              </button>
+            </form>
+          </div>
+          <div>
+            <h3>Guesses Left: {guessesLeft}</h3>
+            <h3>Previous Guesses:</h3>
+            <ul>
+              {guesses.map((guess, index) => (
+                <li key={index}>
+                  {guess} {giveHints(guess).join(" ")}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {message && <p>{message}</p>}
+          {gameOver && <button onClick={startNewGame}>Start New Game</button>}
+        </>
+      )}
     </div>
   );
 };
