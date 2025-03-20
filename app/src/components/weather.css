@@ -1,0 +1,7 @@
+.weather-container {
+  border: 3px solid #ffffff; /* Blue border with 3px width */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Add some padding inside the border */
+  box-shadow: 0 4px 8px rgba(244, 236, 236, 0.1); /* Subtle shadow for depth */
+  background-color: blue;
+}
