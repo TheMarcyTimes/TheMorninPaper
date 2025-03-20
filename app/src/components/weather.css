@@ -1,6 +1,7 @@
 .weather-container {
+  position: relative;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  background: url("../assets/clouds.jpeg");
   color: white;
   padding: 40px;
   border-radius: 12px;

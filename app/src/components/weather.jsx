@@ -56,6 +56,7 @@ const Weather = () => {
 
   return (
     <div className="weather-container">
+      <div class="clouds"></div>
       <h2>Weather Checker</h2>
       <form onSubmit={handleSearch}>
         <input
