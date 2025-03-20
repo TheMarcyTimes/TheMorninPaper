@@ -7,11 +7,12 @@ function App() {
   return (
     <div className="app-container">
       <div className="main-content">
-        <Weather />
+        <h1>The Morning Paper</h1>
+        <div className="news-container">
+          <News />
+        </div>
         <WordGame />
-      </div>
-      <div className="news-container">
-        <News />
+        <Weather />
       </div>
     </div>
   );
