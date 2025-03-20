@@ -1,12 +1,17 @@
-import React from "react";
-// import News from "./components/news.jsx"; // Ensure this path is correct
-import Weather from "./components/weather.jsx";
+import { useState } from "react";
+import News from "./components/news";
+import WordGame from "./components/word";
 
 function App() {
+  const [showWordGame, setShowWordGame] = useState(false);
+
   return (
     <div>
-      <h1></h1>
-      <Weather />
+      <button onClick={() => setShowWordGame(!showWordGame)}>
+        {showWordGame ? "Show News" : "Play Word Game"}
+      </button>
+
+      {showWordGame ? <WordGame /> : <News />}
     </div>
   );
 }
