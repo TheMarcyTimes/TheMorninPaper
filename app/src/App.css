@@ -1,63 +1,146 @@
-/* Centers everything */
+/* General Reset and Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* App Container Styling */
 .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh; /* Full screen height */
+  min-height: 100vh;
   text-align: center;
 }
 
-/* Centers the title */
+/* Title Styling */
 .title {
-  text-align: center;
-  width: 100%;
-  margin-bottom: 20px;
+  color: #003366;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
 }
 
-/* Wrapper for all sections in a stepped quadrilateral layout */
+/* Navbar Styling */
+.custom-navbar {
+  width: 100%;
+  background-color: #003366;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-brand {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.custom-brand:hover {
+  color: #f8b400;
+}
+
+.custom-link {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.custom-link:hover {
+  color: #f8b400 !important;
+}
+
+/* Responsive Navbar */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Content Section Layout */
 .content-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal vertical sections */
-  grid-template-rows: 1fr 1fr; /* Two horizontal sections in the left column */
-  gap: 20px; /* Space between sections */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
   width: 90%;
   max-width: 1200px;
-  height: 120%;
+  margin-top: 40px;
 }
 
-/* Individual section containers */
 .news-wrapper,
 .word-wrapper,
 .weather-wrapper {
-  padding: 15px;
-  background-color: #333; /* Dark background for contrast */
-  border-radius: 8px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
+  min-height: 250px;
 }
 
-/* Positioning within the grid */
 .news-wrapper {
-  grid-column: 1; /* Left column */
-  grid-row: 1; /* Top half */
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .word-wrapper {
-  grid-column: 1; /* Left column */
-  grid-row: 2; /* Bottom half */
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .weather-wrapper {
-  grid-column: 2; /* Right column */
-  grid-row: 1 / span 2; /* Spans both rows */
+  grid-column: 2;
+  grid-row: 1 / span 2;
 }
 
-/* Ensures WordGame and Weather match News */
-.word-wrapper,
-.weather-wrapper {
-  min-width: 300px; /* Ensures consistency in width */
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .news-wrapper,
+  .word-wrapper,
+  .weather-wrapper {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: 200px;
+  }
+
+  .custom-link {
+    margin-left: 10px;
+  }
+}
+
+/* Additional Effects */
+.nav-link.active {
+  color: #f8b400 !important;
+}
+
+.custom-navbar button:focus {
+  outline: none;
+}
+
+/* Smoother Transition */
+button,
+a {
+  transition: all 0.3s ease;
 }
