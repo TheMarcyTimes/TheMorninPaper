@@ -1,3 +1,19 @@
+/* Global Styles for Light and Dark Modes */
+
+/* Default Light Mode Styles */
+body.light {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Dark Mode Styles */
+body.dark {
+  background-color: black;
+  color: white;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
 /* Centers everything */
 .app-container {
   display: flex;
@@ -32,12 +48,26 @@
 .word-wrapper,
 .weather-wrapper {
   padding: 15px;
-  background-color: #333; /* Dark background for contrast */
+  background-color: #333; /* Dark background for contrast (will be adjusted by theme) */
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 200px;
+}
+
+/* Light mode adjustments */
+body.light .news-wrapper,
+body.light .word-wrapper,
+body.light .weather-wrapper {
+  background-color: #f4f4f4; /* Light background */
+}
+
+/* Dark mode adjustments */
+body.dark .news-wrapper,
+body.dark .word-wrapper,
+body.dark .weather-wrapper {
+  background-color: #333; /* Dark background */
 }
 
 /* Positioning within the grid */
@@ -60,4 +90,23 @@
 .word-wrapper,
 .weather-wrapper {
   min-width: 300px; /* Ensures consistency in width */
+}
+
+/* Button for theme toggle */
+.theme-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.theme-toggle-btn:hover {
+  background-color: #555;
 }

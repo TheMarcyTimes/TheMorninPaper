@@ -1,3 +1,47 @@
+/* Light Mode */
+body.light .word-game {
+  background-color: white; /* Light background for word game */
+  color: black; /* Dark text for light background */
+}
+
+body.light .guess span {
+  border-color: #333; /* Dark borders for the letters in light mode */
+}
+
+body.light .correct {
+  background-color: #4caf50; /* Green for correct in light mode */
+}
+
+body.light .misplaced {
+  background-color: #ff9800; /* Orange for misplaced in light mode */
+}
+
+body.light .wrong {
+  background-color: #9e9e9e; /* Gray for wrong guesses in light mode */
+}
+
+/* Dark Mode */
+body.dark .word-game {
+  background-color: #333; /* Dark background for word game */
+  color: white; /* Light text for dark background */
+}
+
+body.dark .guess span {
+  border-color: #fff; /* Light borders for letters in dark mode */
+}
+
+body.dark .correct {
+  background-color: #388e3c; /* Darker green for correct guesses in dark mode */
+}
+
+body.dark .misplaced {
+  background-color: #ffb300; /* Darker orange for misplaced guesses */
+}
+
+body.dark .wrong {
+  background-color: #616161; /* Darker gray for wrong guesses */
+}
+
 .word-game {
   text-align: center;
   font-family: Arial, sans-serif;
