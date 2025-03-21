@@ -1,42 +1,47 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Main Layout Wrapper */
+.layout-container {
+  display: flex;
+  width: 100%;
+  height: 100vh; /* Ensure full-screen height */
+  gap: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Left Section (News + Word Game) */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Word Game Container */
+.word-container {
+  width: 100%;
+  height: 40%; /* Takes up the rest of left section */
+  padding: 15px;
+  border: 2px solid white;
+  border-radius: 8px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Center the news container */
+.news-container {
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto; /* Centers it horizontally */
+  padding: 15px;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* Right Section (Weather) */
+.right-section {
+  width: 50%; /* Takes half of the container */
+  padding: 15px;
+  border: 2px solid white;
+  border-radius: 8px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
