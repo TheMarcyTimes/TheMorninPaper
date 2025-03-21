@@ -19,29 +19,48 @@ button:hover {
   background-color: #005bb5;
 }
 
+/* Increased height for better spacing */
 .events-container {
   margin-top: 20px;
+  font-size: 0.9em; /* Slightly smaller text for better fit */
+  display: flex;
+  flex-direction: column; /* Stacks text vertically */
+  align-items: flex-start; /* Aligns text to the left */
 }
 
+/* Smaller title font size */
+.news-title {
+  font-size: 1.2em; /* Adjust as needed */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Adjusted list styling */
 .events-container ul {
   list-style-type: none;
   padding: 0;
+  width: 100%;
 }
 
 .events-container li {
   margin-bottom: 10px;
+  display: block; /* Ensures each item is on a new line */
 }
 
 .events-container a {
   text-decoration: none;
   color: #0073e6;
   font-weight: bold;
+  font-size: 0.85em; /* Smaller link text */
+  display: block; /* Ensures links stack */
 }
 
-events-container a:hover {
+.events-container a:hover {
   text-decoration: underline;
 }
 
+/* Smaller error message text */
 .error {
   color: red;
+  font-size: 0.9em;
 }

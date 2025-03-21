@@ -1,47 +1,63 @@
-/* Main Layout Wrapper */
-.layout-container {
-  display: flex;
-  width: 100%;
-  height: 100vh; /* Ensure full-screen height */
-  gap: 20px;
-}
-
-/* Left Section (News + Word Game) */
-.left-section {
+/* Centers everything */
+.app-container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  text-align: center;
 }
 
-/* Word Game Container */
-.word-container {
+/* Centers the title */
+.title {
+  text-align: center;
   width: 100%;
-  height: 40%; /* Takes up the rest of left section */
+  margin-bottom: 20px;
+}
+
+/* Wrapper for all sections in a stepped quadrilateral layout */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal vertical sections */
+  grid-template-rows: 1fr 1fr; /* Two horizontal sections in the left column */
+  gap: 20px; /* Space between sections */
+  width: 90%;
+  max-width: 1200px;
+  height: 120%;
+}
+
+/* Individual section containers */
+.news-wrapper,
+.word-wrapper,
+.weather-wrapper {
   padding: 15px;
-  border: 2px solid white;
+  background-color: #333; /* Dark background for contrast */
   border-radius: 8px;
-  background-color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 200px;
 }
 
-/* Center the news container */
-.news-container {
-  width: 100%;
-  max-width: 800px; /* Adjust as needed */
-  margin: 0 auto; /* Centers it horizontally */
-  padding: 15px;
+/* Positioning within the grid */
+.news-wrapper {
+  grid-column: 1; /* Left column */
+  grid-row: 1; /* Top half */
 }
 
-/* Right Section (Weather) */
-.right-section {
-  width: 50%; /* Takes half of the container */
-  padding: 15px;
-  border: 2px solid white;
-  border-radius: 8px;
-  background-color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.word-wrapper {
+  grid-column: 1; /* Left column */
+  grid-row: 2; /* Bottom half */
+}
+
+.weather-wrapper {
+  grid-column: 2; /* Right column */
+  grid-row: 1 / span 2; /* Spans both rows */
+}
+
+/* Ensures WordGame and Weather match News */
+.word-wrapper,
+.weather-wrapper {
+  min-width: 300px; /* Ensures consistency in width */
 }
