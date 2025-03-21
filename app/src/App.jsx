@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import News from "./components/news";
 import WordGame from "./components/word";
 import Weather from "./components/weather";
@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false); // state for dark mode
 
   // Toggle the theme
   const toggleTheme = () => {
@@ -23,7 +23,7 @@ function App() {
       document.body.classList.add("light");
       document.body.classList.remove("dark");
     }
-  }, [isDarkMode]);
+  }, [isDarkMode]); // This runs whenever isDarkMode changes
 
   return (
     <div className="app-container">
@@ -65,6 +65,11 @@ function App() {
           </div>
         </div>
       </nav>
+
+      {/* Dark/Light Mode Toggle Button */}
+      <button className="theme-toggle-btn" onClick={toggleTheme}>
+        {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+      </button>
 
       {/* Page Content */}
       <div className="container mt-4">
