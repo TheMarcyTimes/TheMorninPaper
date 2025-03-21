@@ -1,3 +1,39 @@
+/* Light Mode */
+body.light .news-container {
+  background-color: #f4f4f4; /* Light background */
+  color: black; /* Dark text for light background */
+}
+
+body.light .events-container a {
+  color: #0073e6; /* Light mode link color */
+}
+
+body.light .events-container a:hover {
+  color: #005bb5; /* Lighter hover effect for links in light mode */
+}
+
+body.light .error {
+  color: red; /* Light mode error text color */
+}
+
+/* Dark Mode */
+body.dark .news-container {
+  background-color: #333; /* Dark background */
+  color: white; /* Light text for dark background */
+}
+
+body.dark .events-container a {
+  color: #80c7ff; /* Lighter blue link color in dark mode */
+}
+
+body.dark .events-container a:hover {
+  color: #5390ff; /* Darker hover effect for links in dark mode */
+}
+
+body.dark .error {
+  color: #f8d7da; /* Error message color in dark mode */
+}
+
 form {
   margin-bottom: 20px;
 }
