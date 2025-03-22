@@ -75,6 +75,13 @@ button:hover {
   margin-right: 10px;
 }
 
+/* Fix for temperature and wind speed color */
+.temperature,
+.wind-speed {
+  color: #ffcc00; /* A bright color for better readability */
+}
+
+/* Mobile responsive styles */
 @media (max-width: 480px) {
   input[type="text"] {
     width: 60%;

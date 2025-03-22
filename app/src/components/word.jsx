@@ -107,7 +107,9 @@ const WordGame = () => {
         </select>
       </div>
       {!gameStarted ? (
-        <button onClick={startNewGame}>Start Game</button>
+        <button className="start-game-button" onClick={startNewGame}>
+          Start Game
+        </button>
       ) : (
         <>
           <div>
@@ -120,7 +122,11 @@ const WordGame = () => {
                 maxLength={targetWord.length}
                 disabled={gameOver}
               />
-              <button type="submit" disabled={gameOver}>
+              <button
+                className="submit-guess-button"
+                type="submit"
+                disabled={gameOver}
+              >
                 Submit Guess
               </button>
             </form>

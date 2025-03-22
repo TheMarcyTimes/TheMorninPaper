@@ -87,8 +87,13 @@ const Weather = () => {
           savedWeather.map((weather, index) => (
             <div key={index} className="weather-card">
               <h3>{weather.name}</h3>
-              <p>Temperature: {Math.floor(weather.temperature)}°C</p>
-              <p>Wind Speed: {Math.floor(weather.windspeed)} km/h</p>
+              <p className="temperature">
+                Temperature: {Math.floor(weather.temperature)}°C
+              </p>
+              <p className="wind-speed">
+                Wind Speed: {Math.floor(weather.windspeed)} km/h
+              </p>
+
               <button onClick={() => deleteWeather(weather.name)}>
                 Delete
               </button>

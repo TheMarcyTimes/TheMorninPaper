@@ -1,102 +1,141 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* Light Mode */
-body.light .news-container {
-  background-color: #f4f4f4; /* Light background */
-  color: black; /* Dark text for light background */
-}
-
-body.light .events-container a {
-  color: #0073e6; /* Light mode link color */
-}
-
-body.light .events-container a:hover {
-  color: #005bb5; /* Lighter hover effect for links in light mode */
-}
-
-body.light .error {
-  color: red; /* Light mode error text color */
+body.light {
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 /* Dark Mode */
-body.dark .news-container {
-  background-color: #333; /* Dark background */
-  color: white; /* Light text for dark background */
+body.dark {
+  background-color: #121212;
+  color: #fff;
 }
 
-body.dark .events-container a {
-  color: #80c7ff; /* Lighter blue link color in dark mode */
+/* Container Styling */
+.news-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 60px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-body.dark .events-container a:hover {
-  color: #5390ff; /* Darker hover effect for links in dark mode */
+/* Title */
+.news-title {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-body.dark .error {
-  color: #f8d7da; /* Error message color in dark mode */
-}
-
-form {
+/* Form Styling */
+.news-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   margin-bottom: 20px;
 }
 
 input {
-  padding: 10px;
-  margin: 5px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+input:focus {
+  border-color: #0073e6;
+  outline: none;
 }
 
 button {
-  padding: 10px;
+  padding: 12px 20px;
   background-color: #0073e6;
   color: white;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #005bb5;
 }
 
-/* Increased height for better spacing */
-.events-container {
+/* Error Message */
+.error {
+  color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Toggle Theme Button */
+.theme-toggle {
+  background-color: transparent;
+  border: 2px solid currentColor;
+  color: inherit;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Entries Container */
+.entries-container {
   margin-top: 20px;
-  font-size: 0.9em; /* Slightly smaller text for better fit */
-  display: flex;
-  flex-direction: column; /* Stacks text vertically */
-  align-items: flex-start; /* Aligns text to the left */
 }
 
-/* Smaller title font size */
-.news-title {
-  font-size: 1.2em; /* Adjust as needed */
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-/* Adjusted list styling */
-.events-container ul {
+.entries-container ul {
   list-style-type: none;
   padding: 0;
-  width: 100%;
 }
 
-.events-container li {
-  margin-bottom: 10px;
-  display: block; /* Ensures each item is on a new line */
+.entries-container li {
+  margin-bottom: 15px;
 }
 
-.events-container a {
-  text-decoration: none;
+.entries-container a {
   color: #0073e6;
-  font-weight: bold;
-  font-size: 0.85em; /* Smaller link text */
-  display: block; /* Ensures links stack */
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.events-container a:hover {
+.entries-container a:hover {
   text-decoration: underline;
+  color: #005bb5;
 }
 
-/* Smaller error message text */
-.error {
-  color: red;
-  font-size: 0.9em;
+/* No Events Message */
+.no-events {
+  color: #888;
+  font-size: 1em;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .news-container {
+    padding: 20px;
+  }
+  .news-title {
+    font-size: 1.5em;
+  }
+  button {
+    font-size: 0.9em;
+  }
 }

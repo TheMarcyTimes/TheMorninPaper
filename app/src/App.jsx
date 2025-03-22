@@ -47,6 +47,11 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
+                <Link className="nav-link custom-link" to="/weather">
+                  Weather
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link custom-link" to="/">
                   News
                 </Link>
@@ -54,11 +59,6 @@ function App() {
               <li className="nav-item">
                 <Link className="nav-link custom-link" to="/wordgame">
                   Word Game
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link custom-link" to="/weather">
-                  Weather
                 </Link>
               </li>
             </ul>

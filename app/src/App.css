@@ -1,171 +1,204 @@
-/* Centers everything */
+/* App.css */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures body takes up full height */
+}
+
+/* App Container: Makes sure content is properly aligned and fills available space */
 .app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; /* Changed to 'flex-start' to keep things aligned at the top */
-  width: 100%;
+  flex-grow: 1;
   min-height: 100vh;
-  text-align: center;
-  padding-top: 60px; /* Added padding to ensure content doesn't get hidden behind the navbar */
 }
 
-/* Title Styling */
-.title {
-  color: #003366;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-
-/* Navbar Styling */
-.custom-navbar {
-  width: 100%;
-  background-color: #003366;
-  padding: 1rem 2rem;
+/* Container for page content */
+.container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed; /* Ensures navbar stays on top */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100; /* Ensure navbar stays on top of content */
+  flex-direction: column;
+  flex-grow: 1; /* Ensures it grows to fill available space */
+  justify-content: flex-start; /* Ensures content starts at the top */
+  padding-top: 20px; /* Space between navbar and content */
+}
+
+/* Navbar styling */
+.custom-navbar {
+  background-color: #4caf50;
+  padding: 10px 20px;
 }
 
 .custom-brand {
-  color: #ffffff;
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.custom-brand:hover {
-  color: #f8b400;
+  color: white;
+  font-size: 1.5rem;
 }
 
 .custom-link {
-  color: #ffffff;
+  color: white !important;
   font-size: 1.2rem;
-  margin-left: 20px;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  padding: 10px 15px;
+  transition: color 0.3s;
 }
 
 .custom-link:hover {
-  color: #f8b400 !important;
+  color: #ddd !important;
 }
 
-/* Responsive Navbar */
-.navbar-toggler {
-  border: none;
-}
-
-.navbar-toggler-icon {
-  filter: invert(1);
-}
-
-/* Content Section Layout */
-.content-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px;
-  width: 90%;
-  max-width: 1200px;
-  margin-top: 100px; /* Adjusted margin-top to compensate for fixed navbar */
-}
-
-.news-wrapper,
-.word-wrapper,
-.weather-wrapper {
-  padding: 15px;
-  background-color: #333; /* Dark background for contrast */
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 250px;
-}
-
-/* Light mode adjustments */
-body.light .news-wrapper,
-body.light .word-wrapper,
-body.light .weather-wrapper {
-  background-color: #f4f4f4; /* Light background */
-}
-
-/* Dark mode adjustments */
-body.dark .news-wrapper,
-body.dark .word-wrapper,
-body.dark .weather-wrapper {
-  background-color: #333; /* Dark background */
-}
-
-.news-wrapper {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.word-wrapper {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.weather-wrapper {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .content-wrapper {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
-  .news-wrapper,
-  .word-wrapper,
-  .weather-wrapper {
-    grid-column: 1;
-    grid-row: auto;
-    min-height: 200px;
-  }
-
-  .custom-link {
-    margin-left: 10px;
-  }
-}
-
-/* Additional Effects */
-.nav-link.active {
-  color: #f8b400 !important;
-}
-
-.custom-navbar button:focus {
-  outline: none;
-}
-
-/* Smoother Transition */
-button,
-a {
-  transition: all 0.3s ease;
-}
-
-/* Button for theme toggle */
+/* Theme Toggle Button */
 .theme-toggle-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px;
-  background-color: #333;
+  background-color: #4caf50;
   color: white;
   border: none;
-  cursor: pointer;
   border-radius: 5px;
-  font-size: 16px;
-  z-index: 1000; /* Ensure it's on top of other content */
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .theme-toggle-btn:hover {
-  background-color: #555;
+  background-color: #45a049;
+}
+
+.theme-toggle-btn:focus {
+  outline: none;
+}
+
+/* Word Game Styling */
+.word-game {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 400px;
+  text-align: center;
+  margin: 20px auto; /* Centers WordGame component */
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+  margin-right: 10px;
+}
+
+select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: 150px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 200px;
+  margin-right: 10px;
+}
+
+input[type="text"]:disabled {
+  background-color: #e0e0e0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+li span {
+  font-size: 1.5rem;
+  margin-left: 5px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #d9534f;
+  margin-top: 15px;
+}
+
+button:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .word-game {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  select {
+    font-size: 0.9rem;
+  }
+
+  input[type="text"] {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
 }

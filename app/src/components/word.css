@@ -1,93 +1,200 @@
+/* App.css */
+body {
+  font-family: "Arial", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
 /* Light Mode */
-body.light .word-game {
-  background-color: white; /* Light background for word game */
-  color: black; /* Dark text for light background */
-}
 
-body.light .guess span {
-  border-color: #333; /* Dark borders for the letters in light mode */
-}
-
-body.light .correct {
-  background-color: #4caf50; /* Green for correct in light mode */
-}
-
-body.light .misplaced {
-  background-color: #ff9800; /* Orange for misplaced in light mode */
-}
-
-body.light .wrong {
-  background-color: #9e9e9e; /* Gray for wrong guesses in light mode */
+.light .word-game {
+  background-color: #bbff11;
+  color: #333;
 }
 
 /* Dark Mode */
-body.dark .word-game {
-  background-color: #333; /* Dark background for word game */
-  color: white; /* Light text for dark background */
+.dark {
+  background-color: #333;
+  color: #fff;
 }
 
-body.dark .guess span {
-  border-color: #fff; /* Light borders for letters in dark mode */
+.dark .word-game {
+  background-color: #444;
+  color: #fff;
 }
 
-body.dark .correct {
-  background-color: #388e3c; /* Darker green for correct guesses in dark mode */
+/* Navbar styling */
+.custom-navbar {
+  background-color: #4caf50;
 }
 
-body.dark .misplaced {
-  background-color: #ffb300; /* Darker orange for misplaced guesses */
+.custom-brand {
+  color: white;
+  font-size: 1.5rem;
 }
 
-body.dark .wrong {
-  background-color: #616161; /* Darker gray for wrong guesses */
+.custom-link {
+  color: white !important;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  transition: color 0.3s;
 }
 
+.custom-link:hover {
+  color: #ddd !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #45a049;
+}
+
+.theme-toggle-btn:focus {
+  outline: none;
+}
+
+/* Word Game Styling */
 .word-game {
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 400px;
   text-align: center;
-  font-family: Arial, sans-serif;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: inherit;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: inherit;
+}
+
+label {
+  font-size: 1rem;
+  color: inherit;
+  margin-right: 10px;
 }
 
 select {
-  margin: 10px;
-  padding: 5px;
-  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: 150px;
 }
 
-.guess {
-  display: flex;
-  justify-content: center;
-  margin: 10px 0;
-}
-
-.guess span {
-  width: 30px;
-  height: 30px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid black;
-  margin: 2px;
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.correct {
-  background-color: green;
+.start-game-button {
+  border-radius: 100px;
+  padding: 10px 15px;
+  background-color: #4caf50;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
 
-.misplaced {
-  background-color: gold;
-  color: black;
+button:hover {
+  background-color: #45a049;
 }
 
-.wrong {
-  background-color: gray;
-  color: white;
-}
-
-.message {
-  font-weight: bold;
+input[type="text"] {
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
   margin-top: 10px;
+  width: 100%;
+  max-width: 200px;
+  margin-right: 10px;
+}
+
+input[type="text"]:disabled {
+  background-color: #181212;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+li span {
+  font-size: 1.5rem;
+  margin-left: 5px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #d9534f;
+  margin-top: 15px;
+}
+
+button:disabled {
+  background-color: #000000;
+  cursor: not-allowed;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .word-game {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  select {
+    font-size: 0.9rem;
+  }
+
+  input[type="text"] {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
 }
