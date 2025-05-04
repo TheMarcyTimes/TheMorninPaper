@@ -1,0 +1,141 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode */
+body.light {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Container Styling */
+.news-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 60px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.news-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+.news-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+input:focus {
+  border-color: #0073e6;
+  outline: none;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+/* Error Message */
+.error {
+  color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Toggle Theme Button */
+.theme-toggle {
+  background-color: transparent;
+  border: 2px solid currentColor;
+  color: inherit;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Entries Container */
+.entries-container {
+  margin-top: 20px;
+}
+
+.entries-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.entries-container li {
+  margin-bottom: 15px;
+}
+
+.entries-container a {
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.entries-container a:hover {
+  text-decoration: underline;
+  color: #005bb5;
+}
+
+/* No Events Message */
+.no-events {
+  color: #888;
+  font-size: 1em;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .news-container {
+    padding: 20px;
+  }
+  .news-title {
+    font-size: 1.5em;
+  }
+  button {
+    font-size: 0.9em;
+  }
+}

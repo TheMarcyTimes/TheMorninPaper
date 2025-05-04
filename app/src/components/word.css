@@ -1,0 +1,200 @@
+/* App.css */
+body {
+  font-family: "Arial", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Mode */
+
+.light .word-game {
+  background-color: #bbff11;
+  color: #333;
+}
+
+/* Dark Mode */
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark .word-game {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Navbar styling */
+.custom-navbar {
+  background-color: #4caf50;
+}
+
+.custom-brand {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.custom-link {
+  color: white !important;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  transition: color 0.3s;
+}
+
+.custom-link:hover {
+  color: #ddd !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #45a049;
+}
+
+.theme-toggle-btn:focus {
+  outline: none;
+}
+
+/* Word Game Styling */
+.word-game {
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 400px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: inherit;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: inherit;
+}
+
+label {
+  font-size: 1rem;
+  color: inherit;
+  margin-right: 10px;
+}
+
+select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: 150px;
+}
+
+.start-game-button {
+  border-radius: 100px;
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 200px;
+  margin-right: 10px;
+}
+
+input[type="text"]:disabled {
+  background-color: #181212;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+li span {
+  font-size: 1.5rem;
+  margin-left: 5px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #d9534f;
+  margin-top: 15px;
+}
+
+button:disabled {
+  background-color: #000000;
+  cursor: not-allowed;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .word-game {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  select {
+    font-size: 0.9rem;
+  }
+
+  input[type="text"] {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
