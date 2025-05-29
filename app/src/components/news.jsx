@@ -1,98 +1,106 @@
-import { useState } from "react";
-import "./news.css";
+import { useState } from 'react';
+import './news.css';
+
+const WIKIPEDIA_ONTHISDAY_BASE_URL = 'https://en.wikipedia.org/api/rest_v1/feed/onthisday';
 
 const OnThisDay = () => {
   const [entries, setEntries] = useState([]);
-  const [month, setMonth] = useState("");
-  const [day, setDay] = useState("");
-  const [error, setError] = useState("");
+  const [month, setMonth] = useState('');
+  const [day, setDay] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!month || !day) {
-      setError("Please select both month and day.");
+      setError('Please select both month and day.');
       return;
     }
 
-    setError("");
+    setError('');
 
-    const formattedMonth = String(month).padStart(2, "0");
-    const formattedDay = String(day).padStart(2, "0");
-    const apiUrl = `https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/${formattedMonth}/${formattedDay}`;
+    const formattedMonth = String(month).padStart(2, '0');
+    const formattedDay = String(day).padStart(2, '0');
 
     try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
+      // First API call: Fetch initial "events" for the selected date.
+      const eventsApiUrl = `${WIKIPEDIA_ONTHISDAY_BASE_URL}/events/${formattedMonth}/${formattedDay}`;
+      const eventsResponse = await fetch(eventsApiUrl);
+      const eventsData = await eventsResponse.json();
 
-      let collectedEntries = data.events?.slice(0, 4) || [];
+      let collectedEntries = eventsData.events?.slice(0, 4) || [];
+
+      // Condition for second API call: If the number of events fetched is less than 4,
+      // make another call to fetch births and deaths to fill the remaining slots.
       if (collectedEntries.length < 4) {
-        const additionalResponse = await fetch(
-          `https://en.wikipedia.org/api/rest_v1/feed/onthisday/${formattedMonth}/${formattedDay}`
-        );
-        const additionalData = await additionalResponse.json();
+        const allTypesApiUrl = `${WIKIPEDIA_ONTHISDAY_BASE_URL}/all/${formattedMonth}/${formattedDay}`; // Corrected endpoint to fetch all types
+        const allTypesResponse = await fetch(allTypesApiUrl);
+        const allTypesData = await allTypesResponse.json();
 
         let remainingSlots = 4 - collectedEntries.length;
-        const extraEntries = [
-          ...(additionalData.births || []).slice(0, remainingSlots),
-          ...(additionalData.deaths || []).slice(
-            0,
-            remainingSlots - (additionalData.births?.length || 0)
-          ),
-        ];
+        
+        // Extract births and deaths, ensuring not to exceed remaining slots for each type individually yet.
+        const birthsEntries = (allTypesData.births || []).slice(0, remainingSlots);
+        // Calculate slots remaining after adding births for deaths.
+        const slotsAfterBirths = remainingSlots - birthsEntries.length;
+        const deathsEntries = (allTypesData.deaths || []).slice(0, slotsAfterBirths);
 
-        collectedEntries = [...collectedEntries, ...extraEntries].slice(0, 4);
+        // How data is merged and limited:
+        // Combine the initially fetched events with the newly fetched births and deaths.
+        // Then, ensure the total number of entries does not exceed 4.
+        const additionalEntries = [...birthsEntries, ...deathsEntries];
+        collectedEntries = [...collectedEntries, ...additionalEntries].slice(0, 4);
       }
 
       setEntries(collectedEntries);
     } catch (err) {
-      console.error("Error fetching data:", err);
-      setError("Failed to fetch events. Please try again later.");
+      console.error('Error fetching data:', err);
+      setError('Failed to fetch events. Please try again later.');
     }
   };
 
   return (
-    <div className="news-container">
-      <h1 className="news-title">On This Day</h1>
+    <div className='news-container'>
+      <h1 className='news-title'>On This Day</h1>
 
-      <form className="news-form" onSubmit={handleSubmit}>
-        <label htmlFor="month">Month:</label>
+      <form className='news-form' onSubmit={handleSubmit}>
+        <label htmlFor='month'>Month:</label>
         <input
-          type="number"
-          id="month"
+          type='number'
+          id='month'
           value={month}
           onChange={(e) => setMonth(e.target.value)}
-          min="1"
-          max="12"
-          placeholder="Enter month (1-12)"
+          min='1'
+          max='12'
+          placeholder='Enter month (1-12)'
         />
 
-        <label htmlFor="day">Day:</label>
+        <label htmlFor='day'>Day:</label>
         <input
-          type="number"
-          id="day"
+          type='number'
+          id='day'
           value={day}
           onChange={(e) => setDay(e.target.value)}
-          min="1"
-          max="31"
-          placeholder="Enter day (1-31)"
+          min='1'
+          max='31'
+          placeholder='Enter day (1-31)'
         />
 
-        <button type="submit">Get Events</button>
+        <button type='submit'>Get Events</button>
       </form>
 
-      {error && <p className="error">{error}</p>}
+      {error && <p className='error'>{error}</p>}
 
-      <div className="entries-container">
+      <div className='entries-container'>
         {entries.length > 0 ? (
           <ul>
             {entries.map((entry, index) => (
-              <li key={index} className="news-entry">
+              <li key={index} className='news-entry'>
                 <a
                   href={entry.pages?.[0]?.content_urls?.desktop?.page}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="news-link"
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='news-link'
                 >
                   {entry.text} ({entry.year})
                 </a>
@@ -100,7 +108,7 @@ const OnThisDay = () => {
             ))}
           </ul>
         ) : (
-          <p className="no-events">No historical events found for this date.</p>
+          <p className='no-events'>No historical events found for this date.</p>
         )}
       </div>
     </div>
